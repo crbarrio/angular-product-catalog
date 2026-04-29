@@ -1,4 +1,6 @@
 <article
+    (click)="selectedGame.emit(game().id)"
+    [routerLink]="['/products', game().id]"
     class="border rounded-lg border-slate-200 bg-slate-100 p-3 flex flex-col w-xs content-center hover:cursor-pointer hover:bg-slate-200">
     <h2 class="font-bold my-2 text-center mb-4">{{ game().title }}</h2>
     <img src="{{ game().image }}"
@@ -9,3 +11,4 @@
         <p class="font-semibold">{{ game().price }}€</p>
     </div>
 </article>
+
