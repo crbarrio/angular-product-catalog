@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Game } from '../interfaces/game.interfacxe';
 
-const GAMES: Game[] = [
+export const GAMES: Game[] = [
   {
     id: 1,
     title: 'Counter-Strike 2',
