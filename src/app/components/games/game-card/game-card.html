@@ -1,0 +1,11 @@
+<article
+    class="border rounded-lg border-slate-200 bg-slate-100 p-3 flex flex-col w-xs content-center hover:cursor-pointer hover:bg-slate-200">
+    <h2 class="font-bold my-2 text-center mb-4">{{ game().title }}</h2>
+    <img src="{{ game().image }}"
+        alt="">
+    <p class="mt-4 line-clamp-3">{{ game().description }}</p>
+    <div class="flex justify-between mt-4">
+        <p class="font-medium">{{ game().category }}</p>
+        <p class="font-semibold">{{ game().price }}€</p>
+    </div>
+</article>

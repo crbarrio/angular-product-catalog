@@ -1,9 +1,15 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { GameCard } from "../../components/games/game-card/game-card";
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-game-list',
-  imports: [],
+  imports: [GameCard],
   templateUrl: './game-list.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class GameList { }
+export default class GameList { 
+
+  gameService = inject(GameService);
+
+}

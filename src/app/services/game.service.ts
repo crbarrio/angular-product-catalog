@@ -44,11 +44,11 @@ const GAMES: Game[] = [
   },
   {
     id: 6,
-    title: '',
+    title: 'Rust',
     price: 29,
-    description: '',
-    image: '',
-    category: ''
+    description: 'The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife, other inhabitants, the environment, and other survivors. Do whatever it takes to last another night.',
+    image: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1776257232',
+    category: 'Survival'
   },
   {
     id: 7,

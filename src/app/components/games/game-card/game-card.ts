@@ -1,10 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Game } from '../../../interfaces/game.interfacxe';
 
 @Component({
   selector: 'app-game-card',
   imports: [],
-  template: `<p>game-card works!</p>`,
-  styleUrl: './game-card.css',
+  templateUrl: './game-card.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GameCard { }
+export class GameCard { 
+
+  game = input.required<Game>();
+
+}
