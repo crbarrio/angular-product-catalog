@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-game-details',
@@ -11,9 +12,19 @@ import { map } from 'rxjs';
 })
 export default class GameDetails { 
 
-  gameId = toSignal<string>(
+  gameService = inject(GameService);
+
+  gameId = toSignal<number>(
     inject(ActivatedRoute).params.pipe(
-      map(params => params['id'])
+      map(params => params['id']),
+      map(param => parseInt(param))
     )
   )
+
+  selectedGame = computed(() => {
+    const id = this.gameId();
+    return id ? this.gameService.getGameById(id) : null;
+  });
+
+
 }

@@ -93,5 +93,13 @@ export class GameService {
     return GAMES;
   }
   
+  getGameById (gameId: number): Game | null {
+
+    const selectedGame = GAMES.find(game => game.id === gameId);
+
+    if (!selectedGame) return null;
+
+    return selectedGame;
+  }
 
 }
